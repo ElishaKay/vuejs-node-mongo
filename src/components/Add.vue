@@ -54,7 +54,7 @@
     methods: {
         addCustomer(e){
             if(!this.customer.name || !this.customer.address || !this.customer.email){
-                this.alert = 'Please fill in all required fields';
+                this.alert = 'Please fill in all Required Fields';
             } else {
                 let newCustomer = {
                     name: this.customer.name,
