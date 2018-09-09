@@ -41,27 +41,11 @@
         this.$http.get('http://localhost:3000/api/tenants/')
           .then(function(response){
             this.customers = response.data.tenants;
-
           });
-      },
-      filterBy(list, value){
-        value = value.charAt(0).toUpperCase() + value.slice(1);
-        return list.filter(function(customer){
-          return customer.last_name.indexOf(value) > -1;
-        });
       }
     },
     created: function(){
-      if(this.$route.query.alert){
-        this.alert = this.$route.query.alert;
-      }
       this.fetchCustomers();
-    },
-    updated: function(){
-      this.fetchCustomers();
-    },
-    components: {
-      Alert
     }
   }
 </script>

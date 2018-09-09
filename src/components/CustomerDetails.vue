@@ -30,13 +30,14 @@ export default {
   },
   methods:{
       fetchCustomer(id){
-          this.$http.get('http://slimapp/api/customer/'+id)
+          this.$http.get('http://localhost:3000/api/tenants/'+id)
           .then(function(response){
-            this.customer = response.body;
+            console.log(response.body)
+            this.customer = response.body.tenant;
           });
       },
       deleteCustomer(id){
-          this.$http.delete('http://slimapp/api/customer/delete/'+id)
+          this.$http.delete('http://localhost:3000/api/tenants/'+id)
           .then(function(response){
             this.$router.push({path: '/', query: {alert: 'Customer Deleted'}});
           });
