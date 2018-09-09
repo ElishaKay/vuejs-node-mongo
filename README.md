@@ -1,4 +1,4 @@
-# vCustomers
+# Vue Tenants Manager
 
 > Simple tenants manager - Vue on the FrontEnd, NodeJS and Mongo on the backend
 
