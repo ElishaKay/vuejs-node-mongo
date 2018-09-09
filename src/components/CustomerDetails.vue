@@ -13,7 +13,7 @@
         </ul>
 
         <ul class="list-group">
-            <li class="list-group-item"> {{customer.address}}</li>
+            <li class="list-group-item">{{customer.address}}</li>
             <li class="list-group-item">{{customer.city}}</li>
             <li class="list-group-item">{{customer.state}}</li>
         </ul>
