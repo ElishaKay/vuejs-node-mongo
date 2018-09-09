@@ -57,7 +57,7 @@
                 this.alert = 'Please fill in all required fields';
             } else {
                 let newCustomer = {
-                    first_name: this.customer.name,
+                    name: this.customer.name,
                     phone: this.customer.phone,
                     email: this.customer.email,
                     address: this.customer.address,
