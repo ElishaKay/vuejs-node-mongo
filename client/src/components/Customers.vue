@@ -2,7 +2,7 @@
   <div class="customers container">
     <Alert v-if="alert" v-bind:message="alert" />
     <h1 class="page-header">Manage Customers</h1>
-    <input class="form-control" placeholder="Enter Last Name" v-model="filterInput">
+    <input class="form-control" placeholder="Enter Name" v-model="filterInput">
     <br />
     <table class="table table-striped">
         <thead>
@@ -16,7 +16,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="customer in customers">
+          <tr v-for="customer in filterBy(customers, filterInput)">
             <td>{{customer.name}}</td>
             <td>{{customer.address}}</td>
             <td>{{customer.email}}</td>
@@ -45,6 +45,11 @@
           .then(function(response){
             this.customers = response.data.tenants;
           });
+      },
+      filterBy(list, value){
+        return list.filter(function(customer){
+          return customer.name.indexOf(value) > -1;
+        });
       }
     },
     created: function(){
