@@ -4,11 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import vueResource from 'vue-resource'
-import Customers from './components/Customers'
+import Tenants from './components/Tenants'
 import About from './components/About'
 import Add from './components/Add'
 import Edit from './components/Edit'
-import CustomerDetails from './components/CustomerDetails'
+import TenantDetails from './components/TenantDetails'
 
 Vue.use(vueResource)
 Vue.use(VueRouter)
@@ -17,10 +17,10 @@ const router = new VueRouter({
   mode: 'history',
   base: __dirname,
   routes: [
-    {path:'/', component: Customers},
+    {path:'/', component: Tenants},
     {path: '/about', component: About},
     {path: '/add', component: Add},
-    {path: '/customer/:id', component: CustomerDetails},
+    {path: '/tenant/:id', component: TenantDetails},
     {path: '/edit/:id', component: Edit},
   ]
 })
@@ -39,7 +39,7 @@ new Vue({
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">vCustomers</a>
+          <a class="navbar-brand" href="#">vTenants</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -47,7 +47,7 @@ new Vue({
             <li><router-link to="/about">About</router-link></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><router-link to="/add">Add Customer</router-link></li>
+            <li><router-link to="/add">Add Tenant</router-link></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
