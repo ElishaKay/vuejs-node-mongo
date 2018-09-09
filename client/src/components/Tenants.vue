@@ -2,6 +2,16 @@
   <div class="tenants container">
     <Alert v-if="alert" v-bind:message="alert" />
     <h1 class="page-header">Manage Tenants</h1>
+
+    <section>
+      <h3>Filter by debt</h3>
+      <input type="radio" v-model="search" value="allTenants"> All Tenants
+      <input type="radio" v-model="search" value="withDebt"> Tenants with Debt
+      <input type="radio" v-model="search" value="withNoDebt"> Tenants with No Debt
+      <br />
+      <br />
+    </section>
+
     <input class="form-control" placeholder="Enter Name" v-model="filterInput">
     <br />
     <table class="table table-striped">
@@ -11,8 +21,6 @@
             <th>Address</th>
             <th>Email</th>
             <th>Debt</th>
-
-            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -36,7 +44,8 @@
       return {
         tenants: [],
         alert:'',
-        filterInput:''
+        filterInput:'',
+        search: 'allTenants'
       }
     },
     methods: {
@@ -47,9 +56,23 @@
           });
       },
       filterBy(list, value){
-        return list.filter(function(tenant){
-          return tenant.name.indexOf(value) > -1;
-        });
+        switch(this.search) {
+          case 'allTenants':
+              return list.filter(function(tenant){
+                return tenant.name.indexOf(value) > -1;
+              });
+              break;
+          case 'withDebt':
+              return list.filter(function(tenant){
+                return tenant.name.indexOf(value) > -1 && tenant.debt != 0; 
+              });
+          case 'withNoDebt':
+              return list.filter(function(tenant){
+                return tenant.name.indexOf(value) > -1 && tenant.debt === 0; 
+              });
+          default:
+              break;
+        }
       }
     },
     created: function(){
