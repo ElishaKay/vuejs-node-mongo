@@ -1,7 +1,7 @@
 <template>
   <div class="details container">
     <router-link to="/">Back</router-link>
-    <h1 class="page-header">{{customer.first_name}} {{customer.last_name}}
+    <h1 class="page-header">{{customer.name}} 
         <span class="pull-right">
             <router-link class="btn btn-primary" v-bind:to="'/edit/'+customer.id">Edit</router-link>
             <button class="btn btn-danger" v-on:click="deleteCustomer(customer.id)">Delete</button>
@@ -13,9 +13,8 @@
         </ul>
 
         <ul class="list-group">
-            <li class="list-group-item">{{customer.address}}</li>
-            <li class="list-group-item">{{customer.city}}</li>
-            <li class="list-group-item">{{customer.state}}</li>
+            <li class="list-group-item"><strong>Address: </strong>{{customer.address}}</li>
+            <li class="list-group-item"><strong>Debt: </strong>{{customer.debt}}</li>
         </ul>
   </div>
 </template>
