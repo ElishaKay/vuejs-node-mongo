@@ -4,6 +4,8 @@
 
 ## Installation
 
+Remember to define your: process.env.mongoUri or set it manually within 'app/models/db.js'
+
 ``` bash
 # install dependencies in both the 'root' and 'client' directories
 
@@ -15,7 +17,7 @@ npm run dev
 npm run build
 ```
 
-Requirements: verify that nodemon is installed globally
+Other Requirements: verify that nodemon is installed globally
 ```
 npm install -g nodemon
 ```
