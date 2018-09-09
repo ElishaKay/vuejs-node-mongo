@@ -63,7 +63,7 @@
                 this.alert = 'Please fill in all required fields';
             } else {
                 let updCustomer = {
-                    name: this.customer.first_name,
+                    name: this.customer.name,
                     phone: this.customer.phone,
                     email: this.customer.email,
                     address: this.customer.address,
