@@ -7,9 +7,11 @@
     <table class="table table-striped">
         <thead>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Name</th>
+            <th>Address</th>
             <th>Email</th>
+            <th>Debt</th>
+
             <th></th>
           </tr>
         </thead>
@@ -18,6 +20,7 @@
             <td>{{customer.name}}</td>
             <td>{{customer.address}}</td>
             <td>{{customer.email}}</td>
+            <td>{{customer.debt}}</td>
             <td><router-link class="btn btn-default" v-bind:to="'/customer/'+customer.id">View</router-link></td>
           </tr>
         </tbody>
