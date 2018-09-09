@@ -56,9 +56,23 @@
           });
       },
       filterBy(list, value){
-        return list.filter(function(tenant){
-          return tenant.name.indexOf(value) > -1;
-        });
+        switch(this.search) {
+          case 'allTenants':
+              return list.filter(function(tenant){
+                return tenant.name.indexOf(value) > -1;
+              });
+              break;
+          case 'withDebt':
+              return list.filter(function(tenant){
+                return tenant.name.indexOf(value) > -1 && tenant.debt != 0; 
+              });
+          case 'withNoDebt':
+              return list.filter(function(tenant){
+                return tenant.name.indexOf(value) > -1 && tenant.debt === 0; 
+              });
+          default:
+              break;
+        }
       }
     },
     created: function(){
