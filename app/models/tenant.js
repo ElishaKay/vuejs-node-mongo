@@ -6,10 +6,10 @@ const Schema       = mongoose.Schema;
 
 const TenantSchema   = new Schema({
 	id: { type: String, default: uuid },
-    name: String,
-    email: String,
-    phone: Number,
-    address: String,
+    name: {type: String, default: null},
+    email: {type: String, default: null},
+    phone: {type: Number, default: null},
+    address: {type: String, default: null},
     debt: {type: Number, default: 0}
 });
 
