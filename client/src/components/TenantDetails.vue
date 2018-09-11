@@ -31,7 +31,6 @@ export default {
       fetchTenant(id){
           this.$http.get('http://localhost:3000/api/tenants/'+id)
           .then(function(response){
-            console.log(response.body)
             this.tenant = response.body.tenant;
           });
       },
