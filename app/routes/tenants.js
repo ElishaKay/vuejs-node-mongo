@@ -102,7 +102,7 @@ router.route('/')
  	const body = req.body;
  	console.log('body of update request:',body)
 
- 	if ( body && body.name && body.email && body.address && body.phone && body.debt) {
+ 	if ( body && body.name) {
  		console.log('ran update func on server');
  		const query = {id: tenantId};
  		const update = {
